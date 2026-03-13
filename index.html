@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sana Aşkım 💖</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow: hidden;
+            background: linear-gradient(-45deg, #ff6b9d, #c44569, #f8b500, #ff9ff3);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container {
+            text-align: center;
+            color: white;
+            z-index: 10;
+            max-width: 900px;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            text-shadow: 0 0 20px rgba(255,255,255,0.8);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow {
+            from { text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #ff6b9d; }
+            to { text-shadow: 0 0 20px #fff, 0 0 30px #ff1493, 0 0 40px #ff69b4; }
+        }
+        
+        .message {
+            font-size: 1.5rem;
+            margin: 30px 0;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .gallery {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .photo {
+            width: 220px;        /* 🎉 BÜYÜK YAPILDI: 150px → 220px */
+            height: 220px;       /* 🎉 BÜYÜK YAPILDI: 150px → 220px */
+            border-radius: 15px; /* 🎉 KARE YAPILDI: 50% → 15px (hafif yuvarlak kare) */
+            object-fit: cover;
+            border: 6px solid rgba(255,255,255,0.6);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+        
+        .photo:hover {
+            transform: scale(1.15) rotate(2deg);  /* 🎉 DAHA GÜZEL HOVER */
+            box-shadow: 0 25px 50px rgba(255,107,157,0.7);
+        }
+        
+        /* Kalp Animasyonu */
+        .heart {
+            position: absolute;
+            color: #ff69b4;
+            font-size: 20px;
+            pointer-events: none;
+            animation: float 6s linear infinite;
+            z-index: 5;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100px) rotate(360deg); opacity: 0; }
+        }
+        
+        /* Çiçek Animasyonu */
+        .flower {
+            position: absolute;
+            font-size: 25px;
+            pointer-events: none;
+            animation: flowerFloat 8s linear infinite;
+            z-index: 5;
+        }
+        
+        @keyframes flowerFloat {
+            0% { transform: translateY(100vh) rotate(0deg) scale(0.5); opacity: 1; }
+            50% { transform: translateY(50vh) rotate(180deg) scale(1); }
+            100% { transform: translateY(-100px) rotate(360deg) scale(0.5); opacity: 0; }
+        }
+        
+        /* Kelebek Animasyonu */
+        .butterfly {
+            position: absolute;
+            font-size: 22px;
+            pointer-events: none;
+            animation: butterflyFly 7s ease-in-out infinite;
+            z-index: 5;
+        }
+        
+        @keyframes butterflyFly {
+            0% { 
+                transform: translateY(100vh) translateX(0) rotate(0deg); 
+                opacity: 0; 
+            }
+            20% { opacity: 1; }
+            50% { 
+                transform: translateY(40vh) translateX(20vw) rotate(180deg); 
+            }
+            80% { opacity: 1; }
+            100% { 
+                transform: translateY(-50px) translateX(50vw) rotate(360deg); 
+                opacity: 0; 
+            }
+        }
+        
+        /* Balon Animasyonu */
+        .balloon {
+            position: absolute;
+            font-size: 30px;
+            pointer-events: none;
+            animation: balloonRise 10s linear infinite;
+            z-index: 5;
+        }
+        
+        @keyframes balloonRise {
+            0% { 
+                transform: translateY(100vh) translateX(0) scale(0.8); 
+                opacity: 1; 
+            }
+            100% { 
+                transform: translateY(-150px) translateX(30vw) scale(1.2); 
+                opacity: 0; 
+            }
+        }
+        
+        /* Tatlı Kedi Animasyonu */
+        .cat {
+            position: absolute;
+            font-size: 28px;
+            pointer-events: none;
+            animation: catWalk 9s ease-in-out infinite;
+            z-index: 5;
+        }
+        
+        @keyframes catWalk {
+            0% { 
+                transform: translateY(90vh) translateX(-20vw) rotate(-10deg); 
+                opacity: 0; 
+            }
+            25% { opacity: 1; }
+            50% { 
+                transform: translateY(50vh) translateX(30vw) rotate(10deg); 
+            }
+            75% { opacity: 1; }
+            100% { 
+                transform: translateY(-100px) translateX(80vw) rotate(-10deg); 
+                opacity: 0; 
+            }
+        }
+        
+        .music-btn {
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .music-btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+        
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            .message { font-size: 1.2rem; }
+            .photo { 
+                width: 180px; 
+                height: 180px; 
+            }
+            .gallery { gap: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>💖 BAHAR 💖</h1>
+        <p class="message">Seni gördüğüm ilk andan beri kalbim seninle atıyor. Her gülüşün, her bakışın hayatımı aydınlatıyor. Seninle geçirdiğim her an bir rüya gibi. Sonsuza kadar yanındayım, aşkım! ❤️</p>
+        
+        <div class="gallery">
+            <!-- RESİMLERİ AYNI KLASÖRE KOYUN! -->
+            <img src="WhatsApp Image 2026-03-13 at 06.23.14.jpeg" alt="Bizim Fotoğraf 1" class="photo" onerror="this.src='https://via.placeholder.com/220/ff69b4/fff?text=❤️'">
+            <img src="WhatsApp Image 2026-03-13 at 06.23.14 (2).jpeg" alt="Bizim Fotoğraf 2" class="photo" onerror="this.src='https://via.placeholder.com/220/ff1493/fff?text=❤️'">
+            <img src="WhatsApp Image 2026-03-13 at 06.23.14 (1).jpeg" alt="Bizim Fotoğraf 3" class="photo" onerror="this.src='https://via.placeholder.com/220/c44569/fff?text=❤️'">
+        </div>
+        
+        <button class="music-btn" onclick="toggleMusic()">🎵 Müziği Aç/Kapat</button>
+    </div>
+
+    <!-- TÜM ANIMASYONLAR -->
+    <script>
+        // Kalp yağmuru
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.innerHTML = '💖';
+            heart.className = 'heart';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 3 + 3) + 's';
+            document.body.appendChild(heart);
+            setTimeout(() => heart.remove(), 6000);
+        }
+        
+        // Çiçek yağmuru
+        function createFlower() {
+            const flower = document.createElement('div');
+            const flowers = ['🌸', '🌺', '🌹', '🌷', '💐'];
+            flower.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
+            flower.className = 'flower';
+            flower.style.left = Math.random() * 100 + 'vw';
+            flower.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            document.body.appendChild(flower);
+            setTimeout(() => flower.remove(), 8000);
+        }
+        
+        // Kelebek uçuşu
+        function createButterfly() {
+            const butterfly = document.createElement('div');
+            butterfly.innerHTML = '🦋';
+            butterfly.className = 'butterfly';
+            butterfly.style.left = Math.random() * 80 + 'vw';
+            butterfly.style.animationDuration = (Math.random() * 2 + 5) + 's';
+            document.body.appendChild(butterfly);
+            setTimeout(() => butterfly.remove(), 7000);
+        }
+        
+        // Balon yükseliyor
+        function createBalloon() {
+            const balloon = document.createElement('div');
+            const balloons = ['🎈', '🎉', '🎊'];
+            balloon.innerHTML = balloons[Math.floor(Math.random() * balloons.length)];
+            balloon.className = 'balloon';
+            balloon.style.left = Math.random() * 100 + 'vw';
+            balloon.style.animationDuration = (Math.random() * 4 + 6) + 's';
+            document.body.appendChild(balloon);
+            setTimeout(() => balloon.remove(), 10000);
+        }
+        
+        // Tatlı kedi
+        function createCat() {
+            const cat = document.createElement('div');
+            const cats = ['🐱', '😻', '🐾'];
+            cat.innerHTML = cats[Math.floor(Math.random() * cats.length)];
+            cat.className = 'cat';
+            cat.style.left = Math.random() * 60 + 'vw';
+            cat.style.animationDuration = (Math.random() * 3 + 6) + 's';
+            document.body.appendChild(cat);
+            setTimeout(() => cat.remove(), 9000);
+        }
+        
+        // Animasyonları başlat
+        setInterval(createHeart, 250);
+        setInterval(createFlower, 800);
+        setInterval(createButterfly, 1200);
+        setInterval(createBalloon, 1500);
+        setInterval(createCat, 2000);
+        
+        // Müzik
+        let audio = new Audio('Ebru Gündeş - Kurşun Adres Sormaz Ki (Akustik Canlı Performans).mp3');
+        audio.loop = true;
+        audio.volume = 0.3;
+        
+        function toggleMusic() {
+            if (audio.paused) {
+                audio.play().catch(e => console.log('Müzik oynatılamadı'));
+            } else {
+                audio.pause();
+            }
+        }
+        
+        // Sayfa yüklendiğinde
+        window.addEventListener('load', () => {
+            document.querySelector('.message').style.animationDelay = '0.5s';
+        });
+    </script>
+</body>
+</html>
